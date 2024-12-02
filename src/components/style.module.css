@@ -1,0 +1,45 @@
+.main{
+    width: 1000px;
+}
+
+
+.hi {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+  width: 1500px;
+  background-color: white;
+
+  
+}
+
+.color {
+  background-color: rgb(246, 239, 239);
+}
+
+.name {
+  font-weight: 900;
+  font-size: large;
+  font-style: oblique;
+}
+
+.name2 {
+  font-weight: 900;
+  font-size: large;
+  font-style: italic;
+}
+
+.color:hover {
+  box-shadow: 7px 7px 7px 7px #786464;
+}
+
+.button{
+    margin-left: 1350px;
+}
+
+.navbar{
+    background-color: white;
+}
+.addcart:hover{
+  background-color: #FF9C73;
+}
