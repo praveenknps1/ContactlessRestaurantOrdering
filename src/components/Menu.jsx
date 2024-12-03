@@ -8,6 +8,8 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { cart } from "../toolkit/action";
+// import { icons } from "react-icons";
+import { FaShoppingCart } from "react-icons/fa";
 
 function MenuPage() {
   let data = useSelector((state) => {
@@ -17,11 +19,11 @@ function MenuPage() {
 
   return (
     <>
-<div >
+<div className={s.main_div}>
 <Navbar style={{ backgroundColor: "white", borderBottom: "1px solid #ddd" }}>
-      <Container>
-        <Navbar.Brand>
-          <h1 style={{ color: "#333", margin: 0 }}>Yeah! Make Tour Order  Delicious</h1>
+      <Container >
+        <Navbar.Brand  >
+          <h1 style={{ color: "#333", margin: 0}} >Yeah! Make Tour Order  Delicious</h1>
         </Navbar.Brand>
         <br />
         <Navbar.Collapse className="justify-content-end">
@@ -32,11 +34,14 @@ function MenuPage() {
       </Container>
     </Navbar>
     <br />
-        <button className={s.button} style={{backgroundColor:"#D76C82", }}>Mycart:{data.cartArr.length}</button>
+    <button className={s.buttons} style={{ backgroundColor: "#D76C82" }}>
+  <FaShoppingCart style={{ marginRight: "5px" }} />
+  {data.cartArr.length}
+</button>
+      <br />
 </div>
 
-      <br />
-
+      
       <div className={s.main}>
         <div className={s.hi}>
           <div className={s.color}>

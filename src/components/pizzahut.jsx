@@ -24,7 +24,7 @@ const Pizzahut = () => {
   return ( 
 
     <>
-   <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+   <div style={{ padding: "20px", fontFamily: "Arial, sans-serif",marginLeft:"30rem" }}>
       <header style={{ textAlign: "center", marginBottom: "20px" }}>
         <h1 style={{color:"black"}}>PizzaHut menu</h1>
       </header>
@@ -55,8 +55,12 @@ const Pizzahut = () => {
           </div>
         ))}
       </div>
-    </div>  
+      <br />
         <button style={{backgroundColor:"green", }}  >Mycart:{data.cartArr.length}</button>
+
+        
+
+    </div>  
     </>
    
   );
