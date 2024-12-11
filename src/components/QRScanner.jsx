@@ -1,8 +1,8 @@
+import React, { useState } from "react";
+import QRScanner from "react-qr-scanner";
+import Reader2Wrapper from "./QRScannerWrapper";
 
-
-import React, { useState } from 'react';
-import QRScanner from 'react-qr-scanner';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const QRScannerComponent = () => {
   const [data, setData] = useState(null);
@@ -12,7 +12,7 @@ const QRScannerComponent = () => {
     if (result) {
       setData(result.text);
       // Navigate to the menu page
-      navigate('/menu');
+      navigate("/menu");
     }
   };
 
@@ -22,12 +22,8 @@ const QRScannerComponent = () => {
 
   return (
     <div>
-      <h1 style={{color:"black"}}>Scan For Food Restaurant's</h1>
-      <QRScanner
-        delay={300}
-        onError={handleError}
-        onScan={handleScan}
-      />
+      <h1 style={{ color: "black" }}>Scan For Food Restaurant's</h1>
+      <Reader2Wrapper delay={300} onError={handleError} onScan={handleScan} />
       {data && <p>Scanned Data: {data}</p>}
     </div>
   );

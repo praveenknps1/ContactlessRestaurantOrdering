@@ -1,38 +1,49 @@
-// src/components/Cart.jsx
-
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { remove_item } from "../toolkit/action";
+import "./main.css";
 
-const Cart = ({ cartItems, removeItem, clearCart }) => {
-  const navigate = useNavigate();
-
-  const handleCheckout = () => {
-    navigate("/checkout");
-  };
-
-  const totalAmount = cartItems.reduce((total, item) => total + item.price, 0);
+const Cart = () => {
+  const cartItems = useSelector((state) => state.cartArr); // Get cart items from Redux
+  const dispatch = useDispatch(); // To dispatch actions
+  const navigate = useNavigate(); // To navigate back to the menu
+  console.log(cartItems);
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <h2>Your Cart</h2>
-      {cartItems.length === 0 ? (
-        <p>Your cart is empty.</p>
-      ) : (
-        <div>
-          <ul>
-            {cartItems.map((item, index) => (
-              <li key={index}>
-                {item.name} - {item.price}{" "}
-                <button onClick={() => removeItem(item.id)}>Remove</button>
-              </li>
-            ))}
-          </ul>
-          <p>Total: ${totalAmount}</p>
-          <button onClick={handleCheckout}>Checkout</button>
-          <button onClick={clearCart}>Clear Cart</button>
+    <>
+      <div className="tocenter">
+        <div className="page-container">
+          <header className="header">
+            <h1>My Cart</h1>
+          </header>
+
+          {cartItems.length === 0 ? (
+            <p>Your cart is empty. Please add some items.</p>
+          ) : (
+            cartItems.map((item) => (
+              <>
+                <div className="menu-item" key={item.id}>
+                  <h3>{item.name}</h3>
+                  <p>{item.price}</p>
+                  <img src={item.image} alt="" />
+
+                  <button
+                    style={{ backgroundColor: "orange" }}
+                    onClick={() => dispatch(remove_item(item.id))} // Use item.id instead of index
+                  >
+                    Remove
+                  </button>
+                </div>
+              </>
+            ))
+          )}
+          <button className="back-button" onClick={() => navigate("/menu")}>
+            Back to Menu
+          </button>
         </div>
-      )}
-    </div>
+      </div>
+    </>
   );
 };
 

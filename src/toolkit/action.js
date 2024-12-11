@@ -10,12 +10,23 @@ export let CartData=createSlice({
     reducers:{
         cart:(state,action)=>{
             state.cartArr=[...state.cartArr,action.payload]
-            console.log(action);
+            // console.log(action);
             
+        },
+        remove_item:(state,action)=>{
+            
+            let newArr=state.cartArr.filter((val,ind)=>{
+                console.log(val.id);
+                console.log(action.payload);
+                
+                return val.id!==action.payload
+            })
+
+            state.cartArr= newArr
         }
     }
 })
 
-export let {cart}=CartData.actions;
+export let {cart,remove_item}=CartData.actions;
 
 export default CartData.reducer;

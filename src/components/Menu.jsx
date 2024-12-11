@@ -11,37 +11,59 @@ import { cart } from "../toolkit/action";
 // import { icons } from "react-icons";
 import { FaShoppingCart } from "react-icons/fa";
 
+import { useDispatch } from "react-redux";
+import { useNavigate, useParams } from "react-router-dom";
+
 function MenuPage() {
   let data = useSelector((state) => {
     return state;
   });
+
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   console.log(data);
 
   return (
     <>
-<div className={s.main_div}>
-<Navbar style={{ backgroundColor: "white", borderBottom: "1px solid #ddd" }}>
-      <Container >
-        <Navbar.Brand  >
-          <h1 style={{ color: "#333", margin: 0}} >Yeah! Make Tour Order  Delicious</h1>
-        </Navbar.Brand>
+      <div className={s.main_div}>
+        <Navbar
+          style={{ backgroundColor: "white", borderBottom: "1px solid #ddd" }}
+        >
+          <Container>
+            <Navbar.Brand>
+              <h1 style={{ color: "#333", margin: 0 }}>
+                Yeah! Make Tour Order Delicious
+              </h1>
+            </Navbar.Brand>
+            <br />
+            <Navbar.Collapse className="justify-content-end">
+              <span
+                style={{
+                  color: "#555",
+                  fontStyle: "italic",
+                  fontSize: "1.2rem",
+                }}
+              >
+                "Beautiful –Food is our common ground, a universal experience
+                that transcends borders."
+              </span>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
         <br />
-        <Navbar.Collapse className="justify-content-end">
-          <span style={{ color: "#555", fontStyle: "italic", fontSize: "1.2rem" }}>
-            "Beautiful –Food is our common ground, a universal experience that transcends borders."
-          </span>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
-    <br />
-    <button className={s.buttons} style={{ backgroundColor: "#D76C82" }}>
-  <FaShoppingCart style={{ marginRight: "5px" }} />
-  {data.cartArr.length}
-</button>
-      <br />
-</div>
+        <button
+          className={s.buttons}
+          style={{ backgroundColor: "#D76C82" }}
+          onClick={() => navigate("/cart")}
+        >
+          <FaShoppingCart style={{ marginRight: "5px" }} />
+          {data.cartArr.length}
+        </button>
 
-      
+        <br />
+      </div>
+
       <div className={s.main}>
         <div className={s.hi}>
           <div className={s.color}>
@@ -59,7 +81,7 @@ function MenuPage() {
                   experience.
                 </Card.Text>
                 <Link to="/pizzahut">
-                <Button variant="primary">Menu</Button>
+                  <Button variant="primary">Menu</Button>
                 </Link>
               </Card.Body>
             </Card>
@@ -222,4 +244,3 @@ function MenuPage() {
   );
 }
 export default MenuPage;
-
