@@ -16,6 +16,7 @@ import TiffinData from './components/Tiffin';
 import FryedData from './components/Fryed';
 import ShakesData from './components/Shakes';
 import ShawarmaData from './components/Shawarma';
+import QRcode from './components/QrCode';
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="fryed" element={<FryedData/>}/>
         <Route path="shakes" element={<ShakesData/>}/>
         <Route path="shawarma" element={<ShawarmaData/>}/>
+        <Route path="Qrcode" element={<QRcode/>}/>
       </Routes>
     </Router>
         </Provider>

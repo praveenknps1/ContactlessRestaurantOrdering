@@ -1,0 +1,249 @@
+/* General Container */
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    background-color: #f4f4f9;
+    flex-wrap: wrap; /* Ensures proper responsiveness */
+  }
+  
+  /* Left Section Styles */
+  .left-section {
+    flex: 1 1 100%; /* Full width on small screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: #fff;
+  }
+  
+  .left-section h1 {
+    font-size: 2rem; /* Adjusted for responsiveness */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .left-section p {
+    font-size: 1rem;
+    max-width: 100%; /* Full width on small screens */
+    text-align: center;
+    line-height: 1.6;
+  }
+  
+  .food-image {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    /* height: auto; */
+    height: 280px;
+    max-width: 100%;
+  }
+  
+  /* Middle Section Styles */
+  .middle-section {
+    flex: 1 1 100%; /* Full width on small screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #91AC8F;
+  }
+  
+  .middle-section h1 {
+    font-size: 2rem; /* Adjusted for responsiveness */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .qr-reader {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+  }
+  
+  .scanned-data {
+    color: #27ae60;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Right Section Styles */
+  .right-section {
+    flex: 1 1 100%; /* Full width on small screens */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: #fff;
+  }
+  
+  .right-section h1 {
+    font-size: 2rem; /* Adjusted for responsiveness */
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .food-logo {
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    height: 280px;
+    max-width: 100%;
+  }
+
+  .scan-button {
+    background-color: rgb(59, 203, 236);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+ 
+  
+  /* Media Queries for Responsiveness */
+  @media (min-width: 768px) {
+    .container {
+      flex-direction: row;
+    }
+    
+    .left-section, .middle-section, .right-section {
+      flex: 1;
+    }
+    
+    .left-section h1, 
+    .middle-section h1, 
+    .right-section h1 {
+      font-size: 2.5rem;
+    }
+    
+    .left-section p {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .left-section, .middle-section, .right-section {
+      flex: 1 1 100%;
+    }
+  }
+  
+
+
+
+
+
+
+ /* General container for the QR code */
+.code {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    width: 100vw; /* Full width of the screen */
+    height: 100vh; /* Full height of the screen */
+    background-color: #110b0b;
+    padding: 20px; /* Padding for smaller devices */
+    box-sizing: border-box; /* Include padding in total width */
+  }
+  
+  .subcode {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center; /* Center the text */
+    width: 100%; 
+    max-width: 500px; /* Restrict max width of the card */
+  }
+  
+  .subcode h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .subcode p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .subcode img {
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 100%; 
+    height: auto; 
+  }
+
+
+  .code-button {
+    background-color: rgb(77, 203, 151);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  /* ========== Media Queries ========== */
+  
+  /* Small screens (mobile) */
+  @media (max-width: 576px) {
+    .subcode h1 {
+      font-size: 1.5rem;
+    }
+  
+    .subcode p {
+      font-size: 1rem;
+    }
+  
+    .subcode img {
+      width: 100%; /* Take full width on smaller devices */
+      max-height: 200px; 
+    }
+  }
+  
+  /* Medium screens (tablets) */
+  @media (min-width: 577px) and (max-width: 768px) {
+    .subcode h1 {
+      font-size: 1.8rem;
+    }
+  
+    .subcode p {
+      font-size: 1.1rem;
+    }
+  
+    .subcode img {
+      max-width: 100%; 
+      height: auto;
+    }
+  }
+  
+  /* Large screens (laptops/desktops) */
+  @media (min-width: 769px) {
+    .subcode h1 {
+      font-size: 2rem;
+    }
+  
+    .subcode p {
+      font-size: 1.2rem;
+    }
+  
+    .subcode img {
+      max-width: 100%; 
+      height: auto;
+    }
+  }
+  

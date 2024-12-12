@@ -18,7 +18,7 @@ const BiryaniData = () => {
     {
       id: 9,
       name: "Chicken Biryani",
-      price: "$12",
+      price: "₹120",
       category: "Main Course",
       image:
         "https://th.bing.com/th/id/OIP.r6T2zRnyrrP8LdtOEaGVowHaGl?rs=1&pid=ImgDetMain",
@@ -26,7 +26,7 @@ const BiryaniData = () => {
     {
       id: 10,
       name: "Veg Biryani",
-      price: "$10",
+      price: "₹100",
       category: "Main Course",
       image:
         "https://th.bing.com/th/id/OIP.09w0S6udb6sRvC1qeh3gdQHaE0?w=295&h=191&c=7&r=0&o=5&dpr=1.3&pid=1.7",
@@ -34,7 +34,7 @@ const BiryaniData = () => {
     {
       id: 11,
       name: "Mutton Biryani",
-      price: "$15",
+      price: "₹150",
       category: "Main Course",
       image:
         "https://th.bing.com/th/id/OIP.uTBYGUmws-MDoYlX-BstNgHaF7?w=211&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
@@ -42,7 +42,7 @@ const BiryaniData = () => {
     {
       id: 12,
       name: "Hyderabadi Biryani",
-      price: "$14",
+      price: "₹140",
       category: "Main Course",
       image:
         "https://tse4.mm.bing.net/th/id/OIP.tnzLyQlYfwGVmq_3AU-cGQHaHa?w=168&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",

@@ -14,7 +14,7 @@ const Pizzahut = () => {
     {
       id: 1,
       name: "Pizza",
-      price: "$10",
+      price: "₹100",
       category: "Main Course",
       image:
         "https://vendify-demos.astoundify.com/tasti/wp-content/uploads/sites/4/2020/12/top-view-pepperoni-pizza-with-mushroom-sausages-bell-pepper-olive-corn-black-wooden-1536x1024.jpg",
@@ -22,7 +22,7 @@ const Pizzahut = () => {
     {
       id: 2,
       name: "Pasta",
-      price: "$12",
+      price: "₹120",
       category: "Main Course",
       image:
         "https://th.bing.com/th/id/OIP.6VFRsrYFLmfEdUCRcM6GRwHaEo?w=282&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
@@ -30,14 +30,14 @@ const Pizzahut = () => {
     {
       id: 3,
       name: "Salad",
-      price: "$8",
+      price: "₹80",
       category: "Starters",
       image: "https://images.alphacoders.com/104/thumb-1920-1043416.jpg",
     },
     {
       id: 4,
       name: "Margherita",
-      price: "$9",
+      price: "₹90",
       category: "Starters",
       image:
         "https://api.pizzahut.io/v1/content/en-in/in-1/images/pizza/margherita.90f9451fd66871fb6f9cf7d506053f18.1.jpg",

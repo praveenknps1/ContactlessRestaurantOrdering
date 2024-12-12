@@ -29,7 +29,7 @@ const Cart = () => {
                   <img src={item.image} alt="" />
 
                   <button
-                    style={{ backgroundColor: "orange" }}
+                    style={{ backgroundColor: "#F95454" }}
                     onClick={() => dispatch(remove_item(item.id))} // Use item.id instead of index
                   >
                     Remove

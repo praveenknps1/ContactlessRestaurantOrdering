@@ -61,7 +61,7 @@
   }
   
   .menu-item button {
-    background-color: #62b3d3;
+    background-color: #2186ae;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
@@ -70,7 +70,7 @@
   }
   
   .menu-item button:hover {
-    background-color: #ddd;
+    background-color: #d1abc2;
   }
   
   /* Cart button styles */

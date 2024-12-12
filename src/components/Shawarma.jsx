@@ -19,7 +19,7 @@ const ShawarmaData = () => {
     {
       id: 32,
       name: "Chicken Shawarma",
-      price: "$7",
+      price: "₹70",
       category: "Main Course",
       image:
         "https://th.bing.com/th/id/OIP.Ca9pWDuCKYqHi_SfMZlzZAHaFE?w=250&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
@@ -27,7 +27,7 @@ const ShawarmaData = () => {
     {
       id: 33,
       name: "Falafel Shawarma",
-      price: "$6",
+      price: "₹60",
       category: "Vegetarian",
       image:
         "https://kebabalnoor.com/wp-content/uploads/2016/04/shawarma-falafel-600x600.jpg",
@@ -35,7 +35,7 @@ const ShawarmaData = () => {
     {
       id: 34,
       name: "Mixed Shawarma ",
-      price: "$10",
+      price: "₹100",
       category: "Main Course",
       image:
         "https://th.bing.com/th/id/OIP.hOAYKYT77uGIwPgUg_ZZyQHaFf?w=252&h=186&c=7&r=0&o=5&dpr=1.3&pid=1.7",
@@ -43,7 +43,7 @@ const ShawarmaData = () => {
     {
       id: 35,
       name: "Shawarma Wrap",
-      price: "$5",
+      price: "₹50",
       category: "Snacks",
       image:
         "https://th.bing.com/th/id/OIP.z7ASO9s2WFmurcubEDaZggHaHa?w=198&h=198&c=7&r=0&o=5&dpr=1.3&pid=1.7",
