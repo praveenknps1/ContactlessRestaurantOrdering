@@ -61,7 +61,7 @@ const QRScannerComponent = () => {
         </button>
         <br />
         <br />
-         <button className="scan-button" onClick={() => navigate("/Qrcode")}>Click for QRcode</button>
+        <button className="scan-button" onClick={() => navigate("/Qrcode")}>Click for QRcode</button>
       </div>
       
       <div className="right-section">
