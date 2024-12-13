@@ -10,7 +10,7 @@ const QRScannerComponent = () => {
   const navigate = useNavigate(); // Get the navigate function from React Router
 
   const handleScan = (result) => {
-    if (result && result.text) { // Ensure result is valid and contains text
+    if (result) {
       setData(result.text);
       // Navigate to the menu page
       navigate("/menu");
@@ -22,8 +22,9 @@ const QRScannerComponent = () => {
   };
 
   const toggleCamera = () => {
-    // Toggle between 'environment' (back) and 'user' (front) camera
-    setCameraFacingMode((prevMode) => (prevMode === "environment" ? "user" : "environment"));
+    setCameraFacingMode((prevMode) => 
+      prevMode === "user" ? "environment" : "user"
+    );
   };
 
   return (
@@ -56,12 +57,21 @@ const QRScannerComponent = () => {
           <p className="scanned-data">Scanned Data: {data}</p>
         )}
         <br />
-        <button className="toggle-camera-button" onClick={toggleCamera}>
-          Switch to {cameraFacingMode === "environment" ? "Front" : "Back"} Camera
+        <br />
+
+        <button 
+          className="toggle-camera-button" 
+          onClick={toggleCamera}
+        >
+          Switch to {cameraFacingMode === "user" ? "Back" : "Front"} Camera
         </button>
         <br />
-        <br />
-        <button className="scan-button" onClick={() => navigate("/Qrcode")}>Click for QRcode</button>
+        <button 
+          className="scan-button" 
+          onClick={() => navigate("/Qrcode")}
+        >
+          Click for QRcode
+        </button>
       </div>
       
       <div className="right-section">
