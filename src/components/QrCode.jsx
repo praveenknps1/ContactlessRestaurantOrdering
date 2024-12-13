@@ -20,7 +20,7 @@ function QRcode() {
             alt="QR Code" 
           />
           <br />
-          <button className="code-button" onClick={() => navigate("/")}>
+          <button className="code-button" onClick={() => navigate(-1)}>
             Back to Scan 
           </button>
         </div>

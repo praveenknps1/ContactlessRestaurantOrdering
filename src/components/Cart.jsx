@@ -38,7 +38,7 @@ const Cart = () => {
               </>
             ))
           )}
-          <button className="back-button" onClick={() => navigate("/menu")}>
+          <button className="back-button" onClick={() => navigate(-2)}>
             Back to Menu
           </button>
         </div>

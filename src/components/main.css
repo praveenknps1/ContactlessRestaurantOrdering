@@ -107,6 +107,12 @@
   /* Responsive styles */
   @media (max-width: 768px) {
     /* For tablets */
+
+    .page-container {
+      padding: 10px;
+      width: 100%;
+    }
+
     .menu-item {
       flex-direction: column;
       text-align: center;
@@ -141,6 +147,7 @@
     /* For mobile phones */
     .page-container {
       padding: 10px;
+      width: 100%;
     }
   
     .header h1 {

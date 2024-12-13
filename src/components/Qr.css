@@ -109,6 +109,9 @@
     font-size: 1rem;
   }
  
+  .toggle-camera-button {
+    background-color: rgb(178, 73, 73);
+  }
   
   /* Media Queries for Responsiveness */
   @media (min-width: 768px) {

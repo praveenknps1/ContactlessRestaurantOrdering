@@ -76,7 +76,7 @@ const BuffetData = () => {
             My Cart: {data.cartArr.length}
           </button>
 
-          <button className="back-button" onClick={() => navigate("/menu")}>
+          <button className="back-button" onClick={() => navigate(-1)}>
             Back to Menu
           </button>
         </div>
