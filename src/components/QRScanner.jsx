@@ -77,7 +77,7 @@ import './Qr.css'; // external stylesheet
 
 const QRScannerComponent = () => {
   const [data, setData] = useState(null);
-  const [isBackCamera, setIsBackCamera] = useState(true); // State to toggle front/back camera
+  const [cameraFacingMode, setCameraFacingMode] = useState("environment"); // Default to back camera
   const navigate = useNavigate(); // Get the navigate function from React Router
 
   const handleScan = (result) => {
@@ -93,7 +93,8 @@ const QRScannerComponent = () => {
   };
 
   const toggleCamera = () => {
-    setIsBackCamera(!isBackCamera);
+    // Toggle between 'environment' (back) and 'user' (front) camera
+    setCameraFacingMode((prevMode) => (prevMode === "environment" ? "user" : "environment"));
   };
 
   return (
@@ -119,24 +120,19 @@ const QRScannerComponent = () => {
           delay={300} 
           onError={handleError} 
           onScan={handleScan} 
-          className="qr-reader" 
-          constraints={{ 
-            video: { 
-              facingMode: isBackCamera ? "environment" : "user" 
-            } 
-          }}
+          facingMode={cameraFacingMode} // Set the camera facing mode
+          className="qr-reader"
         />
         {data && (
           <p className="scanned-data">Scanned Data: {data}</p>
         )}
         <br />
-        <br />
-        <button className="scan-button" onClick={() => navigate("/Qrcode")}>Click for QRcode</button>
-        <br />
-        <br />
         <button className="toggle-camera-button" onClick={toggleCamera}>
-          Switch to {isBackCamera ? "Front" : "Back"} Camera
+          Switch to {cameraFacingMode === "environment" ? "Front" : "Back"} Camera
         </button>
+        <br />
+        <br />
+         <button className="scan-button" onClick={() => navigate("/Qrcode")}>Click for QRcode</button>
       </div>
       
       <div className="right-section">
@@ -152,3 +148,4 @@ const QRScannerComponent = () => {
 };
 
 export default QRScannerComponent;
+
