@@ -96,7 +96,7 @@
   }
 }
 
-@media (max-width: 468px) {
+@media (max-width: 480px) {
   .buttons {
     margin-left: auto;
     margin-right: auto;
@@ -104,6 +104,6 @@
 
   .main {
     flex-direction: column;
-    /* width: 200px; */
+    width: 100%;
   }
 }
