@@ -42,7 +42,7 @@ const BiryaniData = () => {
     },
     {
       id: 12,
-      name: "Hyderabadi Biryani",
+      name: "Nizami's Biryani",
       price: "₹140",
       category: "Main Course",
       image:

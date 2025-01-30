@@ -95,3 +95,15 @@
     /* width: 200px; */
   }
 }
+
+@media (max-width: 468px) {
+  .buttons {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main {
+    flex-direction: column;
+    /* width: 200px; */
+  }
+}

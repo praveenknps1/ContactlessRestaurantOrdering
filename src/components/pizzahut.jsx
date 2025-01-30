@@ -18,7 +18,7 @@ const Pizzahut = () => {
       price: "₹100",
       category: "Main Course",
       image:
-        "https://vendify-demos.astoundify.com/tasti/wp-content/uploads/sites/4/2020/12/top-view-pepperoni-pizza-with-mushroom-sausages-bell-pepper-olive-corn-black-wooden-1536x1024.jpg",
+        "https://ts3.mm.bing.net/th?id=OIP.ysb5_HgzRt26i-evQmPYhQHaEo&pid=15.1",
     },
     {
       id: 2,
@@ -62,7 +62,6 @@ const Pizzahut = () => {
                 <button
                   onClick={() => {dispatch(cart(item, ind)), toast.success("item add successful", {autoClose: 1000,})} }
                   className="cart_"
-                  
                 >
                   Add to Cart
                 </button>
