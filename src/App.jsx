@@ -17,11 +17,14 @@ import FryedData from './components/Fryed';
 import ShakesData from './components/Shakes';
 import ShawarmaData from './components/Shawarma';
 import QRcode from './components/QrCode';
+import { ToastContainer } from 'react-toastify';
 
 
 function App() {
   return (
+
         <Provider store={store}>
+  <ToastContainer />
     <Router>
       <Routes>
         <Route path="/" element={<QRScannerComponent />} />
@@ -36,6 +39,7 @@ function App() {
         <Route path="shakes" element={<ShakesData/>}/>
         <Route path="shawarma" element={<ShawarmaData/>}/>
         <Route path="Qrcode" element={<QRcode/>}/>
+        
       </Routes>
     </Router>
         </Provider>

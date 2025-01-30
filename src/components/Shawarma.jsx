@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { cart } from "../toolkit/action";
 import s from "./style.module.css";
+import { toast } from "react-toastify";
 
 const ShawarmaData = () => {
   const { tableNumber } = useParams(); // Extract table number from URL
@@ -64,7 +65,7 @@ const ShawarmaData = () => {
                 <p>{item.price}</p>
                 <img src={item.image} alt="" />
                 <button
-                  onClick={() => dispatch(cart(item, ind))}
+                  onClick={() => {dispatch(cart(item, ind)), toast.success("item add successful", {autoClose: 1000,})} }
                   className="cart_"
                 >
                   Add to Cart

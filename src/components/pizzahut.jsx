@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { cart } from "../toolkit/action";
 import "./main.css"; // Importing the CSS file
+import { toast } from "react-toastify";
 
 const Pizzahut = () => {
   const { tableNumber } = useParams();
@@ -59,8 +60,9 @@ const Pizzahut = () => {
                 <p>{item.price}</p>
                 <img src={item.image} alt="" />
                 <button
-                  onClick={() => dispatch(cart(item, ind))}
+                  onClick={() => {dispatch(cart(item, ind)), toast.success("item add successful", {autoClose: 1000,})} }
                   className="cart_"
+                  
                 >
                   Add to Cart
                 </button>

@@ -98,12 +98,29 @@
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    margin: 5px;
   }
   
   .back-button:hover {
     background-color: darkblue;
   }
   
+  .Recent-button {
+    background-color: green;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-right: 10px;
+    margin: 5px;
+  }
+
+  .Recent-button:hover {
+    background-color: darkgreen;
+  }
+
   /* Responsive styles */
   @media (max-width: 768px) {
     /* For tablets */
@@ -136,7 +153,8 @@
     }
   
     .cart-button, 
-    .back-button {
+    .back-button,
+    .Recent-button {
       font-size: 1rem;
       width: 100%;
       margin-bottom: 10px;
@@ -178,7 +196,8 @@
     }
   
     .cart-button, 
-    .back-button {
+    .back-button,
+    .Recent-button {
       font-size: 1rem;
       width: 100%;
       margin-bottom: 10px;

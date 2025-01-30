@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { remove_item } from "../toolkit/action";
 import "./main.css";
+import { toast } from "react-toastify";
+
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cartArr); // Get cart items from Redux
@@ -30,7 +32,7 @@ const Cart = () => {
 
                   <button
                     style={{ backgroundColor: "#F95454" }}
-                    onClick={() => dispatch(remove_item(item.id))} // Use item.id instead of index
+                    onClick={() => {dispatch(remove_item(item.id)) , toast.error("item removed" , {autoClose: 1000,})}} // Use item.id instead of index
                   >
                     Remove
                   </button>
@@ -38,9 +40,14 @@ const Cart = () => {
               </>
             ))
           )}
-          <button className="back-button" onClick={() => navigate(-2)}>
+
+          <button className="Recent-button" onClick={() => navigate(-1)}>
+            To Recent Page 
+          </button>
+          <button className="back-button" onClick={() => navigate("/menu")}>
             Back to Menu
           </button>
+          
         </div>
       </div>
     </>
