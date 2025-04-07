@@ -59,7 +59,7 @@ const BiryaniData = () => {
           </header>
           <div>
             {menuData.map((item, ind) => (
-              <div className="menu-item" key={item.id}>
+              <div className="menu-item" key={console.log(Math.random())}>
                 <h3>{item.name}</h3>
                 <p>{item.price}</p>
                 <img src={item.image} alt="" />

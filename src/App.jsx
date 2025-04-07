@@ -1,4 +1,4 @@
-// src/App.jsx
+
 import './App.css'
 
 import React from "react";
@@ -18,6 +18,7 @@ import ShakesData from './components/Shakes';
 import ShawarmaData from './components/Shawarma';
 import QRcode from './components/QrCode';
 import { ToastContainer } from 'react-toastify';
+import OrderSuccess from './components/paymentsuccessful';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
         <Route path="shakes" element={<ShakesData/>}/>
         <Route path="shawarma" element={<ShawarmaData/>}/>
         <Route path="Qrcode" element={<QRcode/>}/>
+        <Route path="/success" element={<OrderSuccess/>}/>
         
       </Routes>
     </Router>
