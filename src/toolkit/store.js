@@ -1,11 +1,3 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import { CartData } from "./action";
-
-// export let store=configureStore(CartData)
-
-
-
-
 import { configureStore } from "@reduxjs/toolkit";
 import { CartData } from "./action";
 import { persistReducer, persistStore } from "redux-persist";
