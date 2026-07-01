@@ -46,7 +46,7 @@ const BiryaniData = () => {
       price: "₹140",
       category: "Main Course",
       image:
-        "https://tse4.mm.bing.net/th/id/OIP.tnzLyQlYfwGVmq_3AU-cGQHaHa?w=168&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+        "https://th.bing.com/th?q=Pakistani+Food+Biryani&w=120&h=120&c=1&rs=1&qlt=70&o=7&cb=1&dpr=1.3&pid=InlineBlock&rm=3&mkt=en-IN&cc=IN&setlang=en&adlt=moderate&t=1&mw=247",
     },
   ];
 
@@ -57,14 +57,17 @@ const BiryaniData = () => {
           <header className="header">
             <h1>Biryani House</h1>
           </header>
-          <div>
+          <div className="menu-grid">
             {menuData.map((item, ind) => (
-              <div className="menu-item" key={console.log(Math.random())}>
+              <div className="menu-item" key={item.id}>
                 <h3>{item.name}</h3>
                 <p>{item.price}</p>
                 <img src={item.image} alt="" />
                 <button
-                 onClick={() => {dispatch(cart(item, ind)), toast.success("item add successful", {autoClose: 1000,})} }
+                  onClick={() => {
+                    dispatch(cart(item, ind));
+                    toast.success("item add successful", { autoClose: 1000 });
+                  }}
                   className="cart_"
                 >
                   Add to Cart
@@ -72,11 +75,10 @@ const BiryaniData = () => {
               </div>
             ))}
           </div>
-          <br />
+          <br /> <br /> <br />
           <button className="cart-button" onClick={() => navigate("/cart")}>
             My Cart: {data.cartArr.length}
           </button>
-
           <button className="back-button" onClick={() => navigate(-1)}>
             Back to Menu
           </button>

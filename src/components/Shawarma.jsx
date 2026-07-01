@@ -31,7 +31,7 @@ const ShawarmaData = () => {
       price: "₹60",
       category: "Vegetarian",
       image:
-        "https://kebabalnoor.com/wp-content/uploads/2016/04/shawarma-falafel-600x600.jpg",
+        "https://th.bing.com/th/id/OIP.VTAbb1n_kYlK6_yGceukOQHaEo?w=285&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
     },
     {
       id: 34,
@@ -47,7 +47,7 @@ const ShawarmaData = () => {
       price: "₹50",
       category: "Snacks",
       image:
-        "https://th.bing.com/th/id/OIP.z7ASO9s2WFmurcubEDaZggHaHa?w=198&h=198&c=7&r=0&o=5&dpr=1.3&pid=1.7",
+        "https://th.bing.com/th/id/OIP.gw22Q3RpRfEgb8LeOHbPogHaHa?w=180&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
     },
   ];
 
@@ -58,14 +58,20 @@ const ShawarmaData = () => {
           <header className="header">
             <h1 style={{ color: "black" }}>Shawarma Hut</h1>
           </header>
-          <div>
+          <div className="menu-grid">
             {menuData.map((item, ind) => (
               <div className="menu-item" key={item.id}>
                 <h3>{item.name}</h3>
+
                 <p>{item.price}</p>
                 <img src={item.image} alt="" />
                 <button
-                  onClick={() => {dispatch(cart(item, ind)), toast.success("item add successful", {autoClose: 1000,})} }
+                  onClick={() => {
+                    (dispatch(cart(item, ind)),
+                      toast.success("item add successful", {
+                        autoClose: 1000,
+                      }));
+                  }}
                   className="cart_"
                 >
                   Add to Cart
@@ -73,12 +79,10 @@ const ShawarmaData = () => {
               </div>
             ))}
           </div>
-
-          <br />
+          <br /> <br /> <br />
           <button className="cart-button" onClick={() => navigate("/cart")}>
             My Cart: {data.cartArr.length}
           </button>
-
           <button className="back-button" onClick={() => navigate(-1)}>
             Back to Menu
           </button>

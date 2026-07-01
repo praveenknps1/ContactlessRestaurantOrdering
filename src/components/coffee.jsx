@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { cart } from "../toolkit/action";
 import "./main.css";
-import { toast } from "react-toastify";2
+import { toast } from "react-toastify";
+2;
 
 const CafeData = () => {
   const { tableNumber } = useParams(); // Extract table number from URL
@@ -58,14 +59,20 @@ const CafeData = () => {
           <header className="header">
             <h1> Coffee Cafe Menu</h1>
           </header>
-          <div>
+          <div className="menu-grid">
             {menuData.map((item, ind) => (
               <div className="menu-item" key={item.id}>
                 <h3>{item.name}</h3>
+
                 <p>{item.price}</p>
                 <img src={item.image} alt="" />
                 <button
-                  onClick={() => {dispatch(cart(item, ind)), toast.success("item add successful", {autoClose: 1000,})} }
+                  onClick={() => {
+                    (dispatch(cart(item, ind)),
+                      toast.success("item add successful", {
+                        autoClose: 1000,
+                      }));
+                  }}
                   className="cart_"
                 >
                   Add to Cart
@@ -73,11 +80,10 @@ const CafeData = () => {
               </div>
             ))}
           </div>
-          <br />
+          <br /> <br /> <br />
           <button className="cart-button" onClick={() => navigate("/cart")}>
             My Cart: {data.cartArr.length}
           </button>
-
           <button className="back-button" onClick={() => navigate(-1)}>
             Back to Menu
           </button>

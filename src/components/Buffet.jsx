@@ -30,7 +30,7 @@ const BuffetData = () => {
       price: "₹50",
       category: "Sides",
       image:
-        "https://www.colbeck.co.uk/wp-content/uploads/2017/11/garlic_bread_shrink.jpg",
+        "https://th.bing.com/th/id/OIP.ts_x68EhgRRSJhS3PbTimQHaJ4?w=208&h=277&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
     },
     {
       id: 15,
@@ -57,14 +57,20 @@ const BuffetData = () => {
           <header className="header">
             <h1>Buffet Menu</h1>
           </header>
-          <div>
+          <div className="menu-grid">
             {menuData.map((item, ind) => (
               <div className="menu-item" key={item.id}>
                 <h3>{item.name}</h3>
+
                 <p>{item.price}</p>
                 <img src={item.image} alt="" />
                 <button
-                 onClick={() => {dispatch(cart(item, ind)), toast.success("item add successful", {autoClose: 1000,})} }
+                  onClick={() => {
+                    (dispatch(cart(item, ind)),
+                      toast.success("item add successful", {
+                        autoClose: 1000,
+                      }));
+                  }}
                   className="cart_"
                 >
                   Add to Cart
@@ -72,11 +78,10 @@ const BuffetData = () => {
               </div>
             ))}
           </div>
-          <br />
+          <br /> <br /> <br />
           <button className="cart-button" onClick={() => navigate("/cart")}>
             My Cart: {data.cartArr.length}
           </button>
-
           <button className="back-button" onClick={() => navigate(-1)}>
             Back to Menu
           </button>

@@ -66,15 +66,20 @@ const TiffinData = () => {
           <header className="header">
             <h1 style={{ color: "black" }}>Breakfast Menu</h1>
           </header>
-
-          <div>
+          <div className="menu-grid">
             {menuData.map((item, ind) => (
               <div className="menu-item" key={item.id}>
                 <h3>{item.name}</h3>
+
                 <p>{item.price}</p>
                 <img src={item.image} alt="" />
                 <button
-                  onClick={() => {dispatch(cart(item, ind)), toast.success("item add successful", {autoClose: 1000,})} }
+                  onClick={() => {
+                    (dispatch(cart(item, ind)),
+                      toast.success("item add successful", {
+                        autoClose: 1000,
+                      }));
+                  }}
                   className="cart_"
                 >
                   Add to Cart
@@ -82,12 +87,10 @@ const TiffinData = () => {
               </div>
             ))}
           </div>
-
-          <br />
+          <br /> <br /> <br />
           <button className="cart-button" onClick={() => navigate("/cart")}>
             My Cart: {data.cartArr.length}
           </button>
-
           <button className="back-button" onClick={() => navigate(-1)}>
             Back to Menu
           </button>
