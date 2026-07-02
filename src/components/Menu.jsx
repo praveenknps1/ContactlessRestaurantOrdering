@@ -80,14 +80,18 @@ function MenuPage() {
 
   return (
     <>
+      <nav className={s['navbar-cus']}>
+        <h1 className={s['text-center']}>Welcome to Foodie</h1>
+        </nav>
       <nav className={s['navbar-custom']}>
         <h1 className={s['text-center']}>Yeah! Make Your Order Delicious</h1>
         <h4 className={s['text-center']}>"Beautiful –Food is our common ground, a universal experience that transcends borders."</h4>
+        <button className={s.buttons} onClick={() => navigate("/cart")}>
+          <FaShoppingCart />
+          {data.cartArr.length}
+        </button>
       </nav>
-      <button className={s.buttons} onClick={() => navigate("/cart")}>
-        <FaShoppingCart />
-        {data.cartArr.length}
-      </button>
+
       <div className={s.main}>
         {menuItems.map((item, index) => (
           <MenuCard 
@@ -99,6 +103,33 @@ function MenuPage() {
           />
         ))}
       </div>
+
+   
+
+      <footer className={s.footer}>
+  <div className={s.footerInner}>
+    <h2 className={s.footerTitle}>Contact Us</h2>
+
+    <div className={s.footerContent}>
+      {/* Left */}
+      <div className={s.footerCard}>
+        <span className={s.footerLabel}>📞 Toll Free</span>
+        <span className={s.footerValue}>1800-4242-1111</span>
+      </div>
+
+      {/* Right */}
+      <div className={s.footerCard}>
+        <span className={s.footerLabel}>✉ Mail</span>
+        <a
+          className={s.footerLink}
+          href="mailto:Foodie@gmail.com"
+        >
+          Foodie@gmail.com
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
     </>
   );
 }
