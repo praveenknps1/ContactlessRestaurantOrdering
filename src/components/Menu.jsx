@@ -1,138 +1,119 @@
+import { Link } from "react-router-dom";
+import { FaArrowRight, FaCreditCard, FaQrcode, FaUtensils } from "react-icons/fa";
+import { categories } from "../data/categories";
+import SafeImage from "./SafeImage";
+import { btnOutlineLight, btnPrimary, container, eyebrowDark, eyebrowLight, heroBg } from "../utils/ui";
 
-import React from "react";
-import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
-import s from "./style.module.css";
-import { Link, useNavigate } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { FaShoppingCart } from "react-icons/fa";
-
-const MenuCard = ({ title, description, imgSrc, link }) => (
-  <div className={s.color}>
-    <Card style={{ width: "18rem" }} className={s.shadow}>
-      <Card.Img variant="top" src={imgSrc} className={s['card-img-top']} />
-      <Card.Body>
-        <Card.Title className={s.name}>{title}</Card.Title>
-        <Card.Text>{description}</Card.Text>
-        <Link to={link}>
-          <button className={s.button}>Menu</button>
-        </Link>
-      </Card.Body>
-    </Card>
-  </div>
-);
+const steps = [
+  { icon: <FaQrcode />, title: "Scan", text: "Scan the QR code at your table to open our menu." },
+  { icon: <FaUtensils />, title: "Choose", text: "Pick your favourite dishes from 8 delicious categories." },
+  { icon: <FaCreditCard />, title: "Pay & Enjoy", text: "Pay from your phone and relax while we prepare your food." },
+];
 
 function MenuPage() {
-  const data = useSelector((state) => state);
-  const navigate = useNavigate();
-
-  const menuItems = [
-    {
-      title: "Pizza Hut",
-      description: " Pizza Hut is a global restaurant chain famous for its  delicious pizzas, pastas, and family-friendly dining experience.",
-      imgSrc: "https://th.bing.com/th/id/OIP.4p51L4i6zYTC5Og8SkXD3gAAAA?rs=1&pid=ImgDetMain",
-      link: "/pizzahut",
-    },
-    {
-      title: "Coffee",
-      description: "  Coffee is a beloved brewed beverage made from roasted coffee beans, known for its rich aroma, bold flavor, and energizing  caffeine boost.",
-      imgSrc: "https://static.vecteezy.com/system/resources/previews/014/761/505/original/coffee-shop-logo-design-template-for-business-sign-identity-for-restaurant-cafe-royalty-boutique-heraldic-and-other-illustration-free-vector.jpg",
-      link: "/cafe",
-    },
-    {
-      title: "Biryani",
-      description: " Biryani is a flavorful and aromatic South Asian dish made with spiced rice, tender meat or vegetables, and a blend of rich spices.",
-      imgSrc: "https://th.bing.com/th/id/OIP.XE8HwjLUr9i68VRSpEosigHaHa?w=196&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7",
-      link: "/biryani",
-    },
-    {
-      title: "Buffet",
-      description: "A buffet is a self-serve dining experience offering a variety of dishes, allowing guests to enjoy unlimited choices at their own pace.",
-      imgSrc: "https://www.hearnkirkwood.com/assets/landingpage/Food-unlimited.jpeg",
-      link: "/buffet",
-    },
-    {
-      title: "Tiffin",
-      description: "Tiffins are light, flavorful South Indian meals typicall  featuring dishes like idli, dosa, vada, and upma, often served with chutneys and sambar.",
-      imgSrc:"https://i.pinimg.com/originals/27/9f/bf/279fbf90a26a2c8c73b3dec0db1692cb.jpg",
-      link: "/tiffin",
-    },
-    {
-      title: "Fry'D Chicken",
-      description: " Fried chicken is a crispy and flavorful dish made by seasoning chicken, coating it in batter, and deep-frying it to golden perfection.",
-      imgSrc: "https://image.freepik.com/free-vector/vector-delicious-fried-chicken-logo-badges_66757-485.jpg?w=2000",
-      link: "/fryed",
-    },
-    {
-      title: "Cold Shakes",
-      description: "  Cold shakes are creamy, chilled beverages made with blended ice cream, milk, and flavorings like fruits or chocolate for a refreshing treat.",
-      imgSrc: "https://i.pinimg.com/originals/a1/29/da/a129daea37ea5368636f2b6d5525ddb6.jpg",
-      link: "/shakes",
-    },
-    {
-      title: "Shawarma",
-      description: "Shawarma is a Middle Eastern dish consisting of seasoned meat,typically served in a pita or flatbread with vegetables and sauces.",
-      imgSrc: "https://img.freepik.com/premium-vector/shawarma-arabic-logo_597134-381.jpg?w=2000",
-      link: "/shawarma",
-    },
-    // Add other menu items here
-  ];
-
   return (
     <>
-      <nav className={s['navbar-cus']}>
-        <h1 className={s['text-center']}>Welcome to Foodie</h1>
-        </nav>
-      <nav className={s['navbar-custom']}>
-        <h1 className={s['text-center']}>Yeah! Make Your Order Delicious</h1>
-        <h4 className={s['text-center']}>"Beautiful –Food is our common ground, a universal experience that transcends borders."</h4>
-        <button className={s.buttons} onClick={() => navigate("/cart")}>
-          <FaShoppingCart />
-          {data.cartArr.length}
-        </button>
-      </nav>
+      {/* ---------- Hero ---------- */}
+      <section className={`relative overflow-hidden ${heroBg} pb-28 pt-16 text-center text-white sm:pb-32 sm:pt-24`}>
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(520px_320px_at_12%_18%,rgba(255,107,53,0.35),transparent_70%),radial-gradient(520px_340px_at_90%_85%,rgba(145,172,143,0.5),transparent_70%)]" />
+        <div className={`${container} relative z-10`}>
+          <span className={`${eyebrowLight} animate-fade-up`}>Welcome to Foodie</span>
+          <h1 className="mx-auto mb-4 mt-5 max-w-[820px] animate-fade-up font-display text-[2.3rem] font-bold leading-[1.15] [animation-delay:100ms] sm:text-6xl">
+            Yeah! Make Your Order <em className="text-gold">Delicious</em>
+          </h1>
+          <p className="mx-auto mb-8 max-w-[620px] animate-fade-up italic text-white/80 [animation-delay:200ms] sm:text-lg">
+            “Food is our common ground, a universal experience that transcends borders.”
+          </p>
+          <div className="flex animate-fade-up flex-wrap justify-center gap-3.5 [animation-delay:300ms]">
+            <a href="#categories" className={btnPrimary}>
+              Explore Menu <FaArrowRight />
+            </a>
+            <Link to="/cart" className={btnOutlineLight}>
+              View Cart
+            </Link>
+          </div>
+          <div className="mt-10 flex flex-wrap justify-center gap-2.5 sm:mt-14 sm:gap-3.5" aria-hidden="true">
+            {categories.map((c, i) => (
+              <span
+                key={c.path}
+                style={{ animationDelay: `${(i % 3) * 0.6}s` }}
+                className="grid size-12 animate-float place-items-center rounded-full border border-white/15 bg-white/10 text-2xl motion-reduce:animate-none sm:size-[58px] sm:text-[1.7rem]"
+              >
+                {c.emoji}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className="absolute -bottom-px -inset-x-[5%] h-14 bg-page [border-radius:50%_50%_0_0/100%_100%_0_0]" />
+      </section>
 
-      <div className={s.main}>
-        {menuItems.map((item, index) => (
-          <MenuCard 
-            key={index} 
-            title={item.title} 
-            description={item.description} 
-            imgSrc={item.imgSrc} 
-            link={item.link} 
-          />
-        ))}
-      </div>
+      {/* ---------- Categories ---------- */}
+      <section id="categories" className={`${container} pb-14 pt-10 sm:pb-[72px] sm:pt-14`}>
+        <div className="mx-auto mb-11 max-w-[640px] text-center">
+          <span className={eyebrowDark}>Our Menu</span>
+          <h2 className="mb-2.5 mt-3.5 font-display text-[1.9rem] font-bold leading-tight text-ink sm:text-[2.4rem]">
+            What are you craving today?
+          </h2>
+          <p className="text-muted">Pick a category to see all the dishes and add them to your cart.</p>
+        </div>
 
-   
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(262px,1fr))] gap-6">
+          {categories.map((c) => (
+            <Link
+              to={c.path}
+              key={c.path}
+              className="group flex flex-col overflow-hidden rounded-[22px] border border-line bg-white text-ink no-underline shadow-soft transition duration-300 hover:-translate-y-2 hover:shadow-lift focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+            >
+              <div className="relative h-48 overflow-hidden bg-sage-soft">
+                <SafeImage
+                  src={c.imgSrc}
+                  alt={c.title}
+                  emoji={c.emoji}
+                  className="size-full object-cover transition duration-500 group-hover:scale-110"
+                />
+                <span className="absolute bottom-3.5 left-3.5 grid size-[46px] place-items-center rounded-full bg-white text-[1.35rem] shadow-[0_6px_16px_rgba(0,0,0,0.18)]">
+                  {c.emoji}
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col px-[22px] pb-6 pt-5">
+                <h3 className="mb-2 text-xl font-bold text-ink">{c.title}</h3>
+                <p className="mb-[18px] line-clamp-3 text-sm text-muted">{c.description}</p>
+                <span className="mt-auto inline-flex items-center gap-2 text-[0.92rem] font-semibold text-accent-dark">
+                  View Menu <FaArrowRight className="transition-transform duration-200 group-hover:translate-x-1.5" />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
 
-      <footer className={s.footer}>
-  <div className={s.footerInner}>
-    <h2 className={s.footerTitle}>Contact Us</h2>
-
-    <div className={s.footerContent}>
-      {/* Left */}
-      <div className={s.footerCard}>
-        <span className={s.footerLabel}>📞 Toll Free</span>
-        <span className={s.footerValue}>1800-4242-1111</span>
-      </div>
-
-      {/* Right */}
-      <div className={s.footerCard}>
-        <span className={s.footerLabel}>✉ Mail</span>
-        <a
-          className={s.footerLink}
-          href="mailto:Foodie@gmail.com"
-        >
-          Foodie@gmail.com
-        </a>
-      </div>
-    </div>
-  </div>
-</footer>
+      {/* ---------- How it works ---------- */}
+      <section className="border-t border-line bg-white pb-20 pt-[72px]">
+        <div className={container}>
+          <div className="mx-auto mb-11 max-w-[640px] text-center">
+            <span className={eyebrowDark}>How it works</span>
+            <h2 className="mt-3.5 font-display text-[1.9rem] font-bold leading-tight text-ink sm:text-[2.4rem]">
+              Order in three easy steps
+            </h2>
+          </div>
+          <div className="mx-auto grid max-w-[520px] gap-6 md:max-w-none md:grid-cols-3">
+            {steps.map((s, i) => (
+              <div key={s.title} className="relative rounded-[22px] border border-line bg-page px-6 pb-[30px] pt-[34px] text-center">
+                <span className="absolute left-5 top-3 font-display text-[2.6rem] font-bold leading-none text-sage/50">
+                  {i + 1}
+                </span>
+                <span className="mx-auto mb-[18px] grid size-[66px] place-items-center rounded-full bg-linear-to-br from-accent to-[#ff8a3d] text-[1.4rem] text-white shadow-[0_12px_24px_rgba(255,107,53,0.35)]">
+                  {s.icon}
+                </span>
+                <h3 className="mb-1.5 text-lg font-semibold text-ink">{s.title}</h3>
+                <p className="text-[0.92rem] text-muted">{s.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   );
 }
 
 export default MenuPage;
-
